@@ -3,7 +3,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.transistorsoft.cordova.background-geolocation"
-    version="0.5.8">
+    version="0.6.0">
     <name>BackgroundGeolocation</name>
     <description>Sophisticated, battery-efficient background-geolocation plugin for Cordova</description>
     <license>MIT</license>
@@ -13,7 +13,7 @@
         <engine name="cordova" version=">=3.0.0" />
     </engines>
 
-    <!-- 
+    <!--
         Pre-Cordova 5, non-npm plugin reference.  Uncomment this if you're not using Cordova 5.
     <dependency id="org.apache.cordova.dialogs" />
     -->
@@ -55,17 +55,17 @@
             <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
             <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-        </config-file>   
+        </config-file>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="BackgroundGeolocation">
                 <param name="android-package" value="com.transistorsoft.cordova.bggeo.CDVBackgroundGeolocation"/>
             </feature>
-        </config-file> 
-     </platform>          
+        </config-file>
+     </platform>
 
      <platform name="ios">
         <!-- required background modes:  App registers for location updates -->
-        
+
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
 		<string>Moment needs your location to find the perfect surprise, and we only use it when you have a surprise pending.</string>
         </config-file>
@@ -91,7 +91,7 @@
         <framework src="src/ios/TSLocationManager.framework" custom="true" />
         <source-file src="src/ios/CDVBackgroundGeolocation.m" />
         <header-file src="src/ios/CDVBackgroundGeolocation.h" />
-     </platform>          
+     </platform>
 
 	<!-- wp8 -->
 	<platform name="wp8">
@@ -110,12 +110,12 @@
 
 		<config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
 			<Capability Name="ID_CAP_LOCATION" />
-		</config-file> 
+		</config-file>
 		<source-file src="src/wp8/BackgroundGeoLocation.cs" />
 		<source-file src="src/wp8/BackgroundGeoLocationOptions.cs" />
 		<source-file src="src/wp8/DebugAudioNotifier.cs" />
 		<source-file src="src/wp8/ExtensionMethods.cs" />
-		<source-file src="src/wp8/IBackgroundGeoLocation.cs" /> 
+		<source-file src="src/wp8/IBackgroundGeoLocation.cs" />
 	</platform>
 
 </plugin>

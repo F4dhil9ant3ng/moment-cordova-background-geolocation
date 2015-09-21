@@ -409,6 +409,9 @@ public class CDVBackgroundGeolocation extends CordovaPlugin {
             if (config.has("forceReloadOnGeofence")) {
                 editor.putBoolean("forceReloadOnGeofence", config.getBoolean("forceReloadOnGeofence"));
             }
+            if (config.has("maxDaysToPersist")) {
+                editor.putInt("maxDaysToPersist", config.getInt("maxDaysToPersist"));
+            }
             if (config.has("url")) {
                 editor.putString("url", config.getString("url"));
             }
@@ -434,6 +437,13 @@ public class CDVBackgroundGeolocation extends CordovaPlugin {
                 } catch (JSONException e) {
                     Log.w(TAG, "- Failed to parse #headers to JSONObject.  Ignored");
                 }
+            }
+            // License
+            if (preferences.contains("cordova-background-geolocation-license")) {
+                editor.putString("license", preferences.getString("cordova-background-geolocation-license", null));
+            }
+            if (preferences.contains("cordova-background-geolocation-orderId")) {
+                editor.putString("orderId", preferences.getString("cordova-background-geolocation-orderId", null));
             }
             editor.commit();
             return true;
